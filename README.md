@@ -1,0 +1,2 @@
+# ExamplePlugin
+Example RedstoneLamp Plugin
