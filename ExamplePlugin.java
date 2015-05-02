@@ -7,13 +7,18 @@ import redstonelamp.plugin.PluginBase;
 
 public class ExamplePlugin extends PluginBase {
 	public void onLoad() {
+		this.setAPIVersion(1.3);
+	}
+	
+	public void onEnable() {
 		this.getServer().getCommandRegistrationManager().registerCommand("example", "Example command for ExamplePlugin", true);
-		this.getServer().getLogger().info("[ExamplePlugin] ExamplePlugin loaded!");
+		this.getServer().getLogger().info("[ExamplePlugin] ExamplePlugin enabled!");
 	}
 	
 	public void onCommand(CommandSender sender, Command cmd, String label, List<String> args) {
 		switch(cmd.getName()) {
 			case "example":
+			case "e": //Alias
 				if(args.size() > 0) {
 					sender.sendMessage("[ExamplePlugin] " + args.get(0));
 				} else
