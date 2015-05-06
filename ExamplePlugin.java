@@ -7,11 +7,14 @@ import redstonelamp.plugin.PluginBase;
 
 public class ExamplePlugin extends PluginBase {
 	public void onLoad() {
+		//Sets the API version, which this plugin compares with
 		this.setAPIVersion(1.3);
 	}
 	
 	public void onEnable() {
+		//registers a command, that allows players to issue
 		this.getServer().getCommandRegistrationManager().registerCommand("example", "Example command for ExamplePlugin", true);
+		//A debug message, that tell the console the plugin enables with no errors
 		this.getServer().getLogger().info("[ExamplePlugin] ExamplePlugin enabled!");
 	}
 	
@@ -30,10 +33,19 @@ public class ExamplePlugin extends PluginBase {
 	public boolean onPlayerMoveEvent(PlayerMoveEvent event) {
 		Player player = event.getPlayer();
 		player.sendMessage("[ExamplePlugin] You moved!");
+		//return true, to pass the event
 		return true;
 	}
 	
+	public boolean onPlayerInteract(PlayerInteractEvent event) {
+		String player = event.getPlayer().getDisplayName();
+		player.sendMessage("[ExamplePlugin] I do not let you to interact!");
+		//To cancel the event
+		event.setCancelled(true);
+	}
+	
 	public void onDisable() {
+		//To warn the console that the plugin has disabled
 		this.getServer().getLogger().warn("[ExamplePlugin] ExamplePlugin has been disabled! Did the server stop?");
 	}
 }
