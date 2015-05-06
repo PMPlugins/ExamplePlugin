@@ -40,8 +40,8 @@ public class ExamplePlugin extends PluginBase {
 	public boolean onPlayerInteract(PlayerInteractEvent event) {
 		String player = event.getPlayer().getDisplayName();
 		player.sendMessage("[ExamplePlugin] I do not let you to interact!");
-		//return false, to cancel the event
-		return false;
+		//To cancel the event
+		event.setCancelled(true);
 	}
 	
 	public void onDisable() {
