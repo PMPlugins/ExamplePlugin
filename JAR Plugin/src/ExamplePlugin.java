@@ -1,3 +1,4 @@
+import exampleplugin.listener.ExamplePluginEventListener;
 import redstonelamp.plugin.PluginBase;
 
 /**
@@ -8,6 +9,8 @@ public class ExamplePlugin extends PluginBase {
 	 * This is where you can load/create config files, register events, or other cool startup stuff.
 	 */
 	public void onEnable() {
+		this.getDataFolder();
+		this.getServer().getEventManager().registerEvents(new ExamplePluginEventListener(this));
 		this.getLogger().info("ExampleJarPlugin enabled!");
 	}
 	
