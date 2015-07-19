@@ -13,8 +13,11 @@ public class ExamplePluginEventListener implements Listener {
 	
 	public void onEvent(Event e) {
 		switch(e.getName()) {
-			case "ServerTickEvent":
-				this.plugin.getLogger().info("The server ticked!");
+			case "PlayerJoinEvent":
+				this.plugin.getLogger().info("A player joined");
+			break;
+			case "PlayerQuitEvent":
+				this.plugin.getLogger().info("A player left");
 			break;
 		}
 	}
