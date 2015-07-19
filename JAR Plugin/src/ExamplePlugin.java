@@ -10,7 +10,7 @@ public class ExamplePlugin extends PluginBase {
 	 */
 	public void onEnable() {
 		this.getDataFolder();
-		this.getServer().getEventManager().registerEvents(new ExamplePluginEventListener(this));
+		this.getServer().getEventManager().registerEventListener(new ExamplePluginEventListener(this));
 		this.getLogger().info("ExampleJarPlugin enabled!");
 	}
 	
