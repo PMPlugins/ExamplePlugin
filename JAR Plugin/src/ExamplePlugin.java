@@ -1,7 +1,19 @@
 import exampleplugin.listener.ExamplePluginCommandListener;
 import exampleplugin.listener.ExamplePluginEventListener;
 import redstonelamp.plugin.PluginBase;
+import redstonelamp.resources.annotations.RedstonePlugin;
 
+/**
+ * Data about the plugin goes in the @RedstonePlugin annotation
+ */
+@RedstonePlugin(
+	name = "ExamplePlugin",
+	version = "1.0.0",
+	api = 1.4,
+	author = "RedstoneLamp",
+	description = "An example plugin for developers",
+	website = "http://RedstoneLamp.net"
+)
 /**
  * Plugins MUST extend PluginBase. If you don't, you will get nasty errors.
  */
