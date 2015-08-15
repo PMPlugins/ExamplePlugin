@@ -26,7 +26,7 @@ public class ExamplePlugin extends PluginBase {
 		this.getDataFolder();
 		
 		//Redister events in the EventPluginEventListener class
-		this.getServer().getEventManager().registerEventListener(new ExamplePluginEventListener(this));
+		this.getServer().getEventManager().registerEvents(new ExamplePluginEventListener(this));
 		
 		//Register the example command
 		this.getServer().getCommandManager().registerCommand("example", "Just an example command", new ExamplePluginCommandListener());

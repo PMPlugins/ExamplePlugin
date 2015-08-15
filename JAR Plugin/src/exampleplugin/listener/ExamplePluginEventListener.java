@@ -1,8 +1,10 @@
 package exampleplugin.listener;
 
-import redstonelamp.event.Event;
 import redstonelamp.event.Listener;
+import redstonelamp.event.player.PlayerJoinEvent;
+import redstonelamp.event.player.PlayerQuitEvent;
 import redstonelamp.plugin.PluginBase;
+import redstonelamp.resources.annotations.EventHandler;
 
 public class ExamplePluginEventListener implements Listener {
 	private PluginBase plugin;
@@ -19,18 +21,16 @@ public class ExamplePluginEventListener implements Listener {
 	/**
 	 * Handles an Event
 	 */
-	public void onEvent(Event e) {
-		//Get the events class name
-		switch(e.getEventName()) {
-			//Handle PlayerJoinEvent
-			case "PlayerJoinEvent":
-				this.plugin.getLogger().info("A player joined");
-			break;
-			
-			//Handle PlayerQuit event
-			case "PlayerQuitEvent":
-				this.plugin.getLogger().info("A player left");
-			break;
-		}
+	@EventHandler
+	public void onPlayerJoin(PlayerJoinEvent event) {
+		this.plugin.getLogger().info("A player joined!");
+	}
+	
+	/**
+	 * Handles another Event
+	 */
+	@EventHandler
+	public void onPlayerQuit(PlayerQuitEvent event) {
+		this.plugin.getLogger().info("A player left!");
 	}
 }
