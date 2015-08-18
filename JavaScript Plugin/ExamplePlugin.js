@@ -1,5 +1,8 @@
-/*
- * A JavaScript plugin is used to call API for plugins that allow it
+/**
+ * A JavaScript plugin is used to call API for plugins that allow it or add commands
+ * 
+ * RedstoneLamp events do NOT work on JavaScript plugins!
+ * Plugins that set up their own event system may allow you to setup events using their methods.
  */
 function onEnable() {
 	this.api.getServer().getCommandManager().registerCommand("example", "Just an example command", null, "example.cmd.example");
