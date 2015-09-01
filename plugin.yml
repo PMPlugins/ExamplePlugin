@@ -1,0 +1,3 @@
+main: net.redstonelamp.exampleplugin.Main
+name: ExamplePlugin
+version: 1.0.0
